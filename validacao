@@ -1,0 +1,152 @@
+CASE
+WHEN Origem/mídia IN ("facebook / feed","facebook / cpc","facebook / (not set)","facebook / clicrbs","facebook / social","facebook / gzh","faceboo / feed","m.facebook.com/ / android-app","m.facebook.com/ / android-app")THEN "Facebook
+WHEN Origem/mídia IN ("fb / cpc","facebook / social-ads") THEN "Facebook Paid"
+WHEN Origem/mídia IN ("instagram / stories","instagram / feed","instagram / (not set)","social / instagram_clube","{{site_source_name}} / cpc","social / instagram_clube",) THEN "Instagram Paid"
+WHEN CONTAINS_TEXT(Origem,"facebook") THEN "Facebook"
+WHEN CONTAINS_TEXT(Mídia,"facebook") THEN "Facebook"
+WHEN CONTAINS_TEXT(Origem,"fb") THEN "Facebook"
+WHEN CONTAINS_TEXT(Mídia,"fb") THEN "Facebook"
+WHEN CONTAINS_TEXT(Origem,"instagram") THEN "Instagram"
+WHEN CONTAINS_TEXT(Mídia,"instagram") THEN "Instagram"
+WHEN CONTAINS_TEXT(Origem,"Instagram") THEN "Instagram"
+WHEN CONTAINS_TEXT(Mídia,"Instagram") THEN "Instagram"
+WHEN CONTAINS_TEXT(Origem,"linktree") THEN "Instagram"
+WHEN CONTAINS_TEXT(Mídia,"linktree") THEN "Instagram"
+WHEN CONTAINS_TEXT(Origem,"social") THEN "Instagram"
+WHEN CONTAINS_TEXT(Mídia,"social") THEN "Instagram"
+WHEN CONTAINS_TEXT(Origem,"Social") THEN "Instagram"
+WHEN CONTAINS_TEXT(Mídia,"Social") THEN "Instagram"
+WHEN Origem/mídia IN ("l.instagram.com / referral","instagram.com / referral") THEN "Instagram"
+WHEN Origem/mídia IN ("m.facebook.com / referral","l.facebook.com / referral","lm.facebook.com / referral","facebook.com / referral","pt-br.facebook.com / referral","ne-np.facebook.com / referral") THEN "Facebook"
+WHEN Origem/mídia IN ("linktr.ee / referral","linktree / social") THEN "Linktree"
+WHEN Origem/mídia IN ("youtube.com / referral") THEN "Youtube"
+WHEN CONTAINS_TEXT(Mídia,"youtube.com") THEN "Youtube"
+WHEN CONTAINS_TEXT(Origem,"youtube.com") THEN "Youtube"
+WHEN CONTAINS_TEXT(Mídia,"youtube") THEN "Youtube"
+WHEN CONTAINS_TEXT(Origem,"youtube") THEN "Youtube"
+WHEN CONTAINS_TEXT(Mídia,"Youtube") THEN "Youtube"
+WHEN CONTAINS_TEXT(Origem,"Youtube") THEN "Youtube"
+WHEN Origem/mídia IN ("onesignal / push") THEN "Push"
+WHEN CONTAINS_TEXT(Origem,"push") THEN "Push"
+WHEN CONTAINS_TEXT(Mídia,"push") THEN "Push"
+WHEN CONTAINS_TEXT(Origem,"Push") THEN "Push"
+WHEN CONTAINS_TEXT(Mídia,"Push") THEN "Push"
+WHEN CONTAINS_TEXT(Origem,"onesignal") THEN "Push"
+WHEN CONTAINS_TEXT(Mídia,"onesignal") THEN "Push"
+WHEN CONTAINS_TEXT(Origem,"Onesignal") THEN "Push"
+WHEN CONTAINS_TEXT(Mídia,"Onesignal") THEN "Push"
+WHEN CONTAINS_TEXT(Mídia,"inapp") THEN "Push App"
+WHEN CONTAINS_TEXT(Mídia,"Inapp") THEN "Push App"
+WHEN CONTAINS_TEXT(Origem,"inapp") THEN "Push App"
+WHEN CONTAINS_TEXT(Origem,"Inapp") THEN "Push App"
+WHEN Origem/mídia IN ("google / organic","google / (not set)","bing / organic","yahoo / organic","br.search.yahoo.com / referral","duckduckgo / organic","ecosia.org / organic","naver / organic","baidu / organic") THEN "Organic Search"
+WHEN Origem/mídia IN ("news.google.com / referral","google / news","news.url.google.com / referral","newsshowcase / gnews") THEN "Google News"
+WHEN Origem/mídia IN ("discover.google.com / referral","newsshowcase / discover") THEN "Google Discover"
+WHEN Origem/mídia IN ("com.google.android.googlequicksearchbox/ / android-app","com.google.android.googlequicksearchbox/https/www.google.com / android-app","com.google.android.googlequicksearchbox / organic","lens.google.com / referral") THEN "Organic Search Mobile"
+WHEN Origem/mídia IN ("google / cpc","ig / cpc") THEN "Paid Search"
+WHEN Origem/mídia IN ("display / (not set)","gzh / display","gzh / cpc","google_shopping / cpc") THEN "Paid Google"
+WHEN Origem/mídia IN ("(direct) / (none)") THEN "Direct"
+WHEN Origem/mídia IN ("com.google.android.gm/ / android-app","com.google.android.gm/ / android-app") THEN "Direct App"
+WHEN Origem/mídia IN ("newsletter / e-mail","newsletter / email","the news / newsletter","newsletter / (not set)") THEN "Newsletter"
+WHEN CONTAINS_TEXT(Origem,"Newsletter") THEN "Newsletter"
+WHEN CONTAINS_TEXT(Mídia,"Newsletter") THEN "Newsletter"
+WHEN CONTAINS_TEXT(Origem,"newsletter") THEN "Newsletter"
+WHEN CONTAINS_TEXT(Mídia,"newsletter") THEN "Newsletter"
+WHEN Origem/mídia IN ("lives-grenal / gzh)") THEN "Live Grenal"
+WHEN Origem/mídia IN ("mail.google.com / referral","salesforce / email", "Assinantes / email", "email / thenewscc","Bffvabagff / email","RD Station / email","salesforce / email_carrinho","EmailMarketing / email","hs_email / email","gzh / email","ImobiReport / email","afjfyfggfef fcce / email","email / upsell") THEN "Email"
+WHEN CONTAINS_TEXT(Origem,"email") THEN "Email"
+WHEN CONTAINS_TEXT(Mídia,"email") THEN "Email"
+WHEN Origem/mídia IN ("whatsapp / (not set)","whatsapp / push","whatsapp / social") THEN "Whatsapp"
+WHEN CONTAINS_TEXT(Origem,"whatsapp") THEN "Whatsapp"
+WHEN CONTAINS_TEXT(Mídia,"whatsapp") THEN "Whatsapp"
+WHEN CONTAINS_TEXT(Origem,"Whatsapp") THEN "Whatsapp"
+WHEN CONTAINS_TEXT(Mídia,"Whatsapp") THEN "Whatsapp"
+WHEN Origem/mídia IN ("googleapis.com / referral","trends.google.com.br / referral","classroom.google.com / referral","play.google.com / referral","cse.google.com / referral","keep.google.com / referral","pay.google.com / referral","trends.google.com / referral","docs.google.com / referral","sites.google.com / referral","googleweblight.com / referral","listnr.corp.google.com / referral") THEN "Google Referral"
+WHEN Origem/mídia IN ("gzh / pop_up","gzh / pop","pop_up / gzh","cda / pop_up") THEN "Pop_up"
+WHEN CONTAINS_TEXT(Origem,"pop_up") THEN "Pop_up"
+WHEN CONTAINS_TEXT(Mídia,"pop_up") THEN "Pop_up"
+WHEN CONTAINS_TEXT(Origem,"Pop_up") THEN "Pop_up"
+WHEN CONTAINS_TEXT(Mídia,"Pop_up") THEN "Pop_up"
+WHEN Origem/mídia IN ("gzh / publicidade","calhau / (not set)","display / calhau","gzh / display","display / (not set)") THEN "Calhau"
+WHEN CONTAINS_TEXT(Origem,"Calhau") THEN "Calhau"
+WHEN CONTAINS_TEXT(Mídia,"Calhau") THEN "Calhau"
+WHEN CONTAINS_TEXT(Origem,"calhau") THEN "Calhau"
+WHEN CONTAINS_TEXT(Mídia,"calhau") THEN "Calhau"
+WHEN Origem/mídia IN ("beloud.com / beloud.com") THEN "Beloud"
+WHEN Origem/mídia IN ("gzh / ofertas") THEN "GZH Ofertas"
+WHEN Origem/mídia IN ("gzh / recomendacao","gzh-recomenda / ferramenta-de-recomendacao") THEN "GZH Recomendação"
+WHEN Origem/mídia IN ("clicrbs.com.br / referral","flipzh.clicrbs.com.br / referral","gauchazh.clicrbs.com.br / referral","zh.com.br / referral","gauchazh.page.link / referral","especiais-pio.clicrbs.com.br / referral","rbs / (not set)","flippioneiro.clicrbs.com.br / referral","pioneiro.rbsdirect.com.br / referral","especiais.zh.clicrbs.com.br / referral","gzh / (not set)",
+"amp.diariogaucho.clicrbs.com.br / referral","zerohora.com.br / referral","cda / site","gauchazh.com.br / referral","gauchazh-clicrbs-com-br.cdn.ampproject.org / referral","gzhstories.clicrbs.com.br / referral","GZH / (not set)","interno / link") THEN "Referral Interno" 
+WHEN Origem/mídia IN ("taboola / taboola_news", "trc.taboola.com / referral","taboola.com / referral","taboola / exchange","taboolanews.com / referral","taboola / referral","api.taboola.com / referral","taboola / display") THEN "Taboola"
+WHEN CONTAINS_TEXT(Origem,"Taboola") THEN "Taboola"
+WHEN CONTAINS_TEXT(Mídia,"Taboola") THEN "Taboola"
+WHEN CONTAINS_TEXT(Origem,"taboola") THEN "Taboola"
+WHEN CONTAINS_TEXT(Mídia,"taboola") THEN "Taboola"
+WHEN Origem/mídia IN ("twitter / feed","twitter / stories","twitter / (not set)") THEN "Twitter"
+WHEN CONTAINS_TEXT(Origem,"twitter") THEN "Twitter"
+WHEN CONTAINS_TEXT(Mídia,"twitter") THEN "Twitter"
+WHEN CONTAINS_TEXT(Origem,"Twitter") THEN "Twitter"
+WHEN CONTAINS_TEXT(Mídia,"Twitter") THEN "Twitter"
+WHEN Origem/mídia IN ("linkedin.com / referral","com.linkedin.android/ / android-app") THEN "Linkedin"
+WHEN Origem/mídia IN ("web_app_manifest / (not set)") THEN "Widget Mobile"
+WHEN CONTAINS_TEXT(Origem,"web_app_manife") THEN "Widget Mobile"
+WHEN CONTAINS_TEXT(Mídia,"web_app_manife") THEN "Widget Mobile"
+WHEN CONTAINS_TEXT(Origem,"safeframe.googlesyndication.com") THEN "Google Syndication"
+WHEN CONTAINS_TEXT(Mídia,"safeframe.googlesyndication.com") THEN "Google Syndication"
+WHEN CONTAINS_TEXT(Origem,"ampproject.net") THEN "AMPproject"
+WHEN CONTAINS_TEXT(Mídia, "ampproject.net") THEN "AMPproject"
+WHEN CONTAINS_TEXT(Origem/mídia,"ge.globo.com / referral") THEN "Globo Referral"
+WHEN CONTAINS_TEXT(Origem/mídia,"g1.globo.com / referral") THEN "Globo Referral"
+WHEN CONTAINS_TEXT(Origem,"globo") THEN "Globo Referral"
+WHEN CONTAINS_TEXT(Mídia,"globo") THEN "Globo Referral"
+WHEN CONTAINS_TEXT(Origem,"sms") THEN "SMS" 
+WHEN CONTAINS_TEXT(Mídia,"sms")THEN "SMS"
+WHEN Origem/mídia IN ("t.co / referral","m.break.ma / referral","pt.wikipedia.org / referral","intranet.randon.com.br / referral","radiosaovivo.net / referral",
+"captiveportal:6080 / referral","quickaccess.internet.apps.samsung.com / referral","diariogaucho.clicrbs.com.br / referral","edit.rbscloud.net / referral",
+"encurtador.dev / referral","radiosolaris.com.br / referral","pt.m.wikipedia.org / referral","helo-app.com / referral","an57.net / referral","edit.rbs.com.br / referral",
+"outbrain / native","gruporbs.lightning.force.com / referral","client.scribblelive.com / referral","com.linkedin.android/ / android-app","onlineradiobox.com / referral",
+"reddit.com / referral","homescreen / (not set)","out.reddit.com / referral","lnkd.in / referral","statics.teams.cdn.office.net / referral","com.pinterest/ / android-app",
+"app.pressmanager.com.br / referral","polibiobraga.blogspot.com / referral","linksbio.cc / referral","webmii.com / referral","org.telegram.messenger/ / android-app",
+"desk.oneforma.com / referral","clubefii.com.br / referral","poa24horas.com.br / referral","ufam.edu.br / referral","eadsegen.mj.gov.br / referral","fastshop.com.br / referral",
+"linklist.bio / referral","mail.uol.com.br / referral","linkme.bio / referral","pucrs.br / referral","profemarli.com / referral","skyscrapercity.com / referral","pinterest.com / referral",
+"org.telegram.messenger/ / android-app","homepage.mintnav.com / referral","barrashoppingsul.com.br / referral","baguete.com.br / referral","share-universal / share-bar-app",
+"zuo.com.br / referral","diariomundo.com.ar / referral","gjvggfe / (not set)","blogdopolibiobraga.blogspot.com / referral","mobicaxias.com.br / referral","getfireshot.com / referral",
+"sindifisco-rs.org.br / referral","trello.com / referral","com.pinterest/ / android-app","projetoacbr.com.br / referral","192.168.100.1:1003 / referral","abergs.org.br / referral",
+"linkedin / feed","stonecapital.com.br / referral","anota.ai / referral","127.0.0.1:5500 / referral","guf afjf / afjfyfggfe","apps.crowdtangle.com / referral","es.m.wikipedia.org / referral",
+"prod.uhrs.playmsn.com / referral","inbrowserapp.com / referral","links.ftd.com.br / referral","profilebuilder.site / referral","visualizacao.boxnet.com.br / referral","abfdevelopments.com.br / referral",
+"news.knewin.com / referral","en.m.wikipedia.org / referral","cetres.com.br / referral","br.pinterest.com / referral","bibliotecacatolica.com.br / referral","fusoesaquisicoes.com / referral",
+"sistemas.grupounicad.com.br / referral","extranet.cservice.io / referral","m.quikbrowser.com / referral","novaescola.org.br / referral","runrun.it / referral","gomo.engine.scorm.com / referral",
+"abbi.com.br / referral","radios.com.br / referral","premiogabo.fundaciongabo.org / referral","teams.microsoft.com / referral","disq.us / referral","blog.bridgeimoveis.com.br / referral",
+"mediacdns3.ulife.com.br / referral","luis.blog.br / referral","portaldenoticias.investimentodescomplicado.online / referral","colnotrs.org.br / referral","raterhub.com / referral",
+"esx-prodcdb02.cologne.ger.unicepta.com / referral","fundamenta.adm.br / referral","search.brave.com / referral","Redes Sociais / Hootsuite","away.vk.com / referral","beloud.com / referral",
+"degreed.com / referral","chartbeat.com / referral","grandesantarosanoticias.com / referral","salesforce / inapp","amplusconstrutora.com.br / referral","web.skype.com / referral",
+"sbp.com.br / referral","login.microsoftonline.com / referral","en.wikipedia.org / referral","meuresiduo.com / referral","zimbra.caxias.rs.gov.br / referral","moodle.ufrgs.br / referral",
+"cwaclipping.net / referral","amlduediligence.com.br / referral","forum.politz.com.br / referral","mintnav.com / referral","msn.com / referral","conteudosdigitais.uninter.com / referral",
+"kroton.platosedu.io / referral","arquivopoa.blogspot.com / referral","portal.grupovirta.com.br / referral","mvc.boxnet.com.br / referral","coredacao.com / referral","federacaors.org.br / referral",
+"appaula.prepara.com.br / referral","user-content.s11.sfmc-content.com / referral","foto.art.br / referral","zonamista.com.br / referral","assinanterbs.com.br / referral","ImobiReport / (not set)",
+"serasa.com.br / referral","break.ma / break.ma","monitoring.knewin.com / referral","localhost:8080 / referral","l.wl.co / referral","promo.banrisul.com.br / referral","etec.senar.org.br / referral",
+"moodle.educacao.rs.gov.br / referral","lms30.uno-internacional.com / referral","mobilesearchers.com / referral","padlet.com / referral","girolatino.substack.com / referral","i9b2b.grupoa.education / referral",
+"apps.bulletinintelligence.com / referral","meganet.com.br / referral","afjfyfggfe / f-zbvy","sinserconrs.com.br / referral","luizmuller.com / referral","fmss.org.br / referral","leiaisso.net / referral",
+"aeromot.vercel.app / referral","icertus.com.br / referral","m.nearbyme.io / referral","radioprogresso.com.br / referral","redes / post","franquiaonii.com.br / referral","old.reddit.com / referral",
+"wcoresearch.risk.lexisnexis.com / referral","br.bolavip.com / referral","be.franq.com.br / referral","trespassosnews.com.br / referral","zerohora.clicrbs.com.br / referral","paulomarquesnoticias.com.br / referral",
+"tribunadainternet.com.br / referral","sites.icasei.com.br / referral","tempoedinheirooficial.com.br / referral","editorial.taboola.com / ert_breaking-news","bcharts.com.br / referral","upminer.uplexis.com / referral",
+"jesocarneiro.com.br / referral","materia / materia","portalplural.com.br / referral","introvertendo.com.br / referral","aovivo.clicrbs.com.br / referral","certificando.com.br / referral","m.fmkorea.com / referral",
+"eadcate.prefeitura.sp.gov.br / referral","aax.amazon-adsystem.com / referral","vg.no / referral","m.youtube.com / referral","maissobrealzheimer.com.br / referral","live-oc182.elos.vc / referral",
+"stories.6chcdn.feednews.com / referral","inscer.pucrs.br / referral","iafd.com / referral","cordeiroeaureliano.com.br / referral","ead.ipog.edu.br / referral","true.com.br / referral","blog.babyenxoval.com.br / referral",
+"app2.smi.srv.br / referral","vepbitsale.xyz / referral","enfimnoivei.com / referral","newsflashmedia.online / referral","dailybuzz.mediamaxonline.com / referral","noticiahoje.com.br / referral","clicrbs / referral",
+"moodle.unisinos.br / referral","gosearches.gg / referral","marsemfim.com.br / referral","web.toddleapp.com / referral","sisoc-cluster01.amisustest.co.uk / referral","us10.campaign-archive.com / referral",
+"campusonline1.ead.uniceub.br / referral","com.pinterest / referral","pita.it / referral","villagerosa.bitrix24.com.br / referral","antisstore.xyz / referral","pinterest.com.mx / referral","buenosairesparachicas.com / referral",
+"canva.com / referral","internet-start.net / referral","portalsoledadenews.com.br / referral","madmimi.com / referral","art-terror.blogspot.com / referral","cathedral.grupoa.education / referral","com.slack/ / android-app",
+"desmoronadamenteembuscadalucidezperdida.quora.com / referral","gruporbs / blindagem","edelbrau.com.br / referral","caurs.gov.br / referral","pactoalegre.poa.br / referral","lizza-prd.s3.us-west-2.amazonaws.com / referral",
+"e.allin.ifenacon.org.br / referral","lavasoft.gosearchresults.com / referral","es.search.yahoo.com / referral","ineac.uff.br / referral","clarosva.com / referral","melhorplano.net / referral","webmailpmpa.portoalegre.rs.gov.br / referral",
+"files.copyspider.com.br / referral","webcache.googleusercontent.com / referral","startpage.com / referral","observatoriodosfamosos.uol.com.br / referral","forms.office.com / referral","pandlr.com / referral","mysearcheasy.com / referral",
+"hotlist.fahnd.com / referral","escoladafamilia.institutojef.org.br / referral","presearch.com / referral","dtracker.deloitte.com.br / referral","uniad.org.br / referral","acaodacidadania.org.br / referral","catracalivre.com.br / referral",
+"brasil.elpais.com / referral","links.hmv.org.br / referral","corporativo.fb.org.br / referral","instagram / (not set)","cxradio / (not set)","romahotel.com.br / referral","prosaudeprodutosnaturais.com.br / referral",
+"gruporbs.com.br / referral","cremers.org.br / referral","belosf7.com.br / referral","servicos.ulbra.br / referral","tempo.clic.com.br / referral","gruposepe.com.br / referral","twitch.tv / referral","actualno.com / referral",
+"br.answerroot.com / referral","candeiasradio.com.br / referral","petalsearch.com / referral","s3arch.page / referral","lumina.ufrgs.br / referral","educadorainterativa.com.br / referral","errorz.carrd.co / referral",
+"correo.vera.com.uy / referral","s3.sa-east-1.amazonaws.com / referral","unoesc.mrooms.net / referral","s17.chatguru.app / referral","generico.empauta.com / referral","newspaperhunt.com / referral","imobiliarianovolar.net / referral",
+"oxu.az / referral","megalodon.jp / referral","tecnoblog.net / referral","200.248.78.99:6080 / referral","m.divvino.com.br / referral","portal.bigboost.bigdatacorp.com.br / referral","redemetamorfose.org / referral","goals.video / referral") THEN "Referral"
+WHEN CONTAINS_TEXT(Mídia,"referral") THEN "Referral"
+WHEN Mídia IN("referral") THEN "Referral"
+ELSE "Outros"
+END
